@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RBX Script · Key System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Orbes de fondo -->
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <!-- Panel HWID (izquierda) -->
+  <aside class="hwid-panel" id="hwidPanel">
+    <div class="hwid-panel-header">
+      <span class="hwid-panel-title">🖥️ Reset HWID</span>
+    </div>
+    <div class="hwid-panel-body">
+      <p class="hwid-desc">Ingresa una key para ver su dispositivo vinculado y resetearlo.</p>
+      <div class="hwid-input-wrap">
+        <input type="text" id="hwidKeyInput" class="hwid-input" placeholder="Escribe la key..." />
+      </div>
+      <button class="btn-hwid-search" id="btnHwidSearch">Buscar</button>
+
+      <div class="hwid-result" id="hwidResult" style="display:none">
+        <div class="hwid-result-row">
+          <span class="hwid-result-label">KEY</span>
+          <span class="hwid-result-val" id="hwidResKey"></span>
+        </div>
+        <div class="hwid-result-row">
+          <span class="hwid-result-label">HWID</span>
+          <span class="hwid-result-val" id="hwidResVal"></span>
+        </div>
+        <div class="hwid-result-row">
+          <span class="hwid-result-label">ESTADO</span>
+          <span class="hwid-result-status" id="hwidResStatus"></span>
+        </div>
+        <button class="btn-hwid-reset" id="btnHwidReset">🔄 Reset HWID</button>
+      </div>
+
+      <p class="hwid-msg" id="hwidMsg"></p>
+    </div>
+  </aside>
+  <div class="dragon-bg">
+    <img
+      src="fantasy-dragons.gif"
+      alt="dragon"
+      class="dragon-gif"
+    />
+  </div>
+
+  <!-- ── PANEL DE KEYS (esquina superior derecha) ── -->
+  <aside class="keys-panel" id="keysPanel">
+    <div class="keys-panel-header">
+      <span class="keys-panel-title">🔑 Keys activas — RBX Script</span>
+      <span class="keys-count" id="keysCount">0</span>
+    </div>
+    <div class="keys-list" id="keysList">
+      <p class="empty-msg">Sin keys aún</p>
+    </div>
+  </aside>
+
+  <!-- ── CONTENIDO CENTRAL ── -->
+  <main class="main">
+
+    <!-- Logo / título -->
+    <div class="logo-wrap">
+      <div class="logo-icon">🔱</div>
+    </div>
+    <h1 class="title">RBX Script</h1>
+    <p class="subtitle">S Y S T E M &nbsp; K E Y &nbsp; —&nbsp; R B X</p>
+    <div class="divider"></div>
+
+    <!-- Crear key -->
+    <section class="card" id="createCard">
+      <p class="card-label">DURACIÓN DE LA KEY</p>
+
+      <!-- Input de días -->
+      <div class="input-wrap">
+        <input
+          type="number"
+          id="daysInput"
+          class="days-input"
+          placeholder="Escribe los días..."
+          min="1"
+        />
+        <span class="input-suffix">días</span>
+      </div>
+
+      <button class="btn-create" id="btnCreate">
+        <span id="btnCreateText">Generar Key</span>
+      </button>
+
+      <!-- Key generada -->
+      <div class="result-box" id="resultBox" style="display:none">
+        <span class="result-label">KEY GENERADA</span>
+        <div class="result-key-row">
+          <span class="result-key" id="resultKey"></span>
+          <button class="btn-copy" id="btnCopy" title="Copiar">⧉</button>
+        </div>
+        <span class="result-exp" id="resultExp"></span>
+      </div>
+
+      <p class="status-msg" id="statusMsg"></p>
+    </section>
+
+    <p class="footer">v2.0 &nbsp;|&nbsp; HeadLess Hub</p>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
